@@ -28,7 +28,10 @@ export const ItemText = styled.div`
   }
 `;
 
-export const ButtonGroup = styled.div``;
+export const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export const LeftButton = styled.button``;
 

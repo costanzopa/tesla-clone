@@ -1,15 +1,19 @@
-import React from 'react';
-import Header from '../Header/Header.component.jsx';
-import Home from '../Home/Home.component';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Container } from './App.style';
+const HomePage = lazy(() => import('../../pages/Home'));
 
 function App() {
   return (
-    <Container>
-      <Header />
-      <Home />
-    </Container>
+    <>
+      <Router>
+        <Suspense fallback={<div>Loading</div>}>
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+          </Switch>
+        </Suspense>
+      </Router>
+    </>
   );
 }
 

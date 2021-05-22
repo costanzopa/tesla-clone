@@ -53,17 +53,29 @@ export const LeftButton = styled.button`
   background-color: #333337;
   color: #ffffff;
   margin-right: 8px;
-  ${() => button};
+  opacity: 0.85;
+  ${() => Button};
+
+  @media (max-width: 768px) {
+    margin-right: 0px;
+    margin-bottom: 1em;
+  }
 `;
 
 export const RightButton = styled.button`
-  background-color: #dedbdb;
-  color: #181a1f;
+  background-color: #ffffff;
+  color: #000000;
   margin-left: 8px;
-  ${() => button};
+  opacity: 0.65;
+  ${() => Button};
+
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    margin-bottom: 8px;
+  }
 `;
 
-const button = css`
+const Button = css`
   height: 42px;
   width: 256px;
   display: flex;
@@ -71,11 +83,18 @@ const button = css`
   justify-content: center;
   border-radius: 100px;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   cursor: pointer;
   padding: 2px;
   letter-spacing: 0.2em;
-  font-weight: 400;
+  font-weight: 500;
+  border: none;
+
+  @media (max-width: 768px) {
+    width: 450px;
+    height: 40px;
+    letter-spacing: 0em;
+  }
 `;
 
 export const DownArrow = styled.img`

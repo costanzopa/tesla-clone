@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 import {
   Wrap,
   ItemText,
@@ -18,14 +19,20 @@ const Section = ({
 }) => {
   return (
     <Wrap bgImage={backgroundImg}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </ItemText>
+      <Fade bottom>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </ItemText>
+      </Fade>
       <ButtonsContainer>
         <ButtonGroup>
-          <LeftButton>{leftBtnText}</LeftButton>
-          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          <Fade left>
+            <LeftButton>{leftBtnText}</LeftButton>
+          </Fade>
+          <Fade right>
+            {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          </Fade>
         </ButtonGroup>
         <DownArrow src="/images/down-arrow.svg" alt="" />
       </ButtonsContainer>

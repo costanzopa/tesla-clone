@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
+import { TranslateRounded } from '@material-ui/icons';
 
 export const Container = styled.div`
   min-height: 60px;
@@ -11,6 +13,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  z-index: 1;
 `;
 
 export const MenuContainer = styled.div`
@@ -50,6 +53,40 @@ export const MenuRight = styled.div`
   }
 `;
 
-export const HamburguerMenu = styled(MenuIcon)`
+export const BurgerMenu = styled(MenuIcon)`
+  cursor: pointer;
+`;
+
+export const BurgerNav = styled.div`
+  position: fixed;
+  background-color: #ffffff;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  z-index: 16;
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  transform: ${(props) => (props.show ? 'translateX(0)' : 'translateX(100%)')};
+  transition: transform 0.2s;
+  & li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    & a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+`;
+
+export const BurgerNavCloseWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const BurgerNavClose = styled(CloseIcon)`
   cursor: pointer;
 `;

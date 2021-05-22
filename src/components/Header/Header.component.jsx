@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -6,10 +6,14 @@ import {
   MenuContainer,
   MenuRightContainer,
   MenuRight,
-  HamburguerMenu,
+  BurgerMenu,
+  BurgerNav,
+  BurgerNavCloseWrapper,
+  BurgerNavClose,
 } from './Header.style';
 
 const Header = (props) => {
+  const [burgerStatus, setBurgerStatus] = useState(false);
   return (
     <Container>
       <Link to="/">
@@ -26,8 +30,29 @@ const Header = (props) => {
           <Link>Shop</Link>
           <Link>Tesla Account</Link>
         </MenuRight>
-        <HamburguerMenu />
+        <BurgerMenu onClick={() => setBurgerStatus(true)} />
       </MenuRightContainer>
+      <BurgerNav show={burgerStatus}>
+        <BurgerNavCloseWrapper>
+          <BurgerNavClose onClick={() => setBurgerStatus(false)} />
+        </BurgerNavCloseWrapper>
+
+        <li>
+          <Link>Existing Inventory</Link>
+        </li>
+        <li>
+          <Link>Used Inventory</Link>
+        </li>
+        <li>
+          <Link>Trade-in</Link>
+        </li>
+        <li>
+          <Link>Cybertruck</Link>
+        </li>
+        <li>
+          <Link>Roadaster</Link>
+        </li>
+      </BurgerNav>
     </Container>
   );
 };

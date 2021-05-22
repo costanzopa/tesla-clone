@@ -2,24 +2,33 @@ import React from 'react';
 import {
   Wrap,
   ItemText,
+  ButtonsContainer,
   ButtonGroup,
   LeftButton,
   RightButton,
+  DownArrow,
 } from './Section.style';
 
-const Section = (props) => {
+const Section = ({
+  title,
+  description,
+  backgroundImg,
+  leftBtnText,
+  rightBtnText,
+}) => {
   return (
-    <Wrap>
+    <Wrap bgImage={backgroundImg}>
       <ItemText>
-        <h1>Model S</h1>
-        <p>
-          Order Online for <span>Touchless Delivery</span>
-        </p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </ItemText>
-      <ButtonGroup>
-        <LeftButton>Custom Order</LeftButton>
-        <RightButton>Existing Inventory</RightButton>
-      </ButtonGroup>
+      <ButtonsContainer>
+        <ButtonGroup>
+          <LeftButton>{leftBtnText}</LeftButton>
+          <RightButton>{rightBtnText}</RightButton>
+        </ButtonGroup>
+        <DownArrow src="/images/down-arrow.svg" alt="" />
+      </ButtonsContainer>
     </Wrap>
   );
 };

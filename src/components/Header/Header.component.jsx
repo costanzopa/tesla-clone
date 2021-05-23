@@ -12,11 +12,11 @@ import {
   BurgerNavClose,
 } from './Header.style';
 
-import { selectCars } from '../../features/car/carSlice';
+import { selectMenuItems } from '../../features/menuItem/menuItemSlice';
 
 const Header = (props) => {
   const [burgerStatus, setBurgerStatus] = useState(false);
-  const cars = useSelector(selectCars);
+  const cars = useSelector(selectMenuItems);
 
   return (
     <Container>

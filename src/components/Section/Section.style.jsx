@@ -11,6 +11,7 @@ export const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  scroll-snap-align: start;
 `;
 
 export const ItemText = styled.div`

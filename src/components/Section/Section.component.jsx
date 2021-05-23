@@ -7,7 +7,6 @@ import {
   ButtonGroup,
   LeftButton,
   RightButton,
-  DownArrow,
 } from './Section.style';
 
 const Section = ({
@@ -34,7 +33,6 @@ const Section = ({
             {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
           </Fade>
         </ButtonGroup>
-        <DownArrow src="/images/down-arrow.svg" alt="" />
       </ButtonsContainer>
     </Wrap>
   );

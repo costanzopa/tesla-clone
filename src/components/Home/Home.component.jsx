@@ -1,17 +1,21 @@
 import React from 'react';
 import Section from '../Section';
-import { Container } from './Home.style';
+import { Container, FistSection, DownArrow } from './Home.style';
 
 const Home = (props) => {
   return (
     <Container>
-      <Section
-        title="Model S"
-        description="Order Online for Touchless Delivery"
-        backgroundImg="model-s.jpg"
-        leftBtnText="Custom Order"
-        rightBtnText="Existing Inventory"
-      />
+      <FistSection>
+        <Section
+          title="Model S"
+          description="Order Online for Touchless Delivery"
+          backgroundImg="model-s.jpg"
+          leftBtnText="Custom Order"
+          rightBtnText="Existing Inventory"
+        />
+        <DownArrow src="images/down-arrow.svg" alt="" />
+      </FistSection>
+
       <Section
         title="Model Y"
         description="Order Online for Touchless Delivery"

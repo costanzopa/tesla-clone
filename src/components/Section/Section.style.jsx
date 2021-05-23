@@ -37,7 +37,7 @@ export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 45px;
+  margin-bottom: 70px;
 `;
 
 export const ButtonGroup = styled.div`
@@ -95,26 +95,5 @@ const Button = css`
     width: 450px;
     height: 40px;
     letter-spacing: 0em;
-  }
-`;
-
-export const DownArrow = styled.img`
-  margin-top: 10px;
-  height: 45px;
-  animation: animateDown infinite 1.5s;
-  @keyframes animateDown {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(5px);
-    }
-    60% {
-      transform: translateY(3px);
-    }
   }
 `;

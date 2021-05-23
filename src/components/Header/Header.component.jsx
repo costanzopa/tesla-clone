@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 import {
   Container,
   MenuContainer,
@@ -12,18 +12,19 @@ import {
   BurgerNavClose,
 } from './Header.style';
 
+import { selectCars } from '../../features/car/carSlice';
+
 const Header = (props) => {
   const [burgerStatus, setBurgerStatus] = useState(false);
+  const cars = useSelector(selectCars);
+
   return (
     <Container>
       <Link to="/">
         <img src="logo.svg" alt="" />
       </Link>
       <MenuContainer>
-        <Link>Model S</Link>
-        <Link>Model 3</Link>
-        <Link>Model X</Link>
-        <Link>Model Y</Link>
+        {cars && cars.map((car, index) => <Link key={index}>{car}</Link>)}
       </MenuContainer>
       <MenuRightContainer>
         <MenuRight>
@@ -36,7 +37,12 @@ const Header = (props) => {
         <BurgerNavCloseWrapper>
           <BurgerNavClose onClick={() => setBurgerStatus(false)} />
         </BurgerNavCloseWrapper>
-
+        {cars &&
+          cars.map((car, index) => (
+            <li>
+              <Link key={index}>{car}</Link>
+            </li>
+          ))}
         <li>
           <Link>Existing Inventory</Link>
         </li>

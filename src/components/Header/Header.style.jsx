@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import { TranslateRounded } from '@material-ui/icons';
 
 export const Container = styled.div`
   min-height: 60px;
